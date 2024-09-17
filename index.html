@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Van Hauser</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sub_container">
+        <div class="logo">
+          <img src="./images/logo.png" class="logo-photo" alt="logo" />
+        </div>
+        <div class="hero_container">
+          <div class="hero">
+            <div class="text-box">
+              <h1 class="heading__main">Add Plants To Your Living Space</h1>
+              <p class="para">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Distinctio repellat, voluptate non illum nobis asperiores.
+              </p>
+            </div>
+            <div class="button">
+              <a href="#" class="btn btn-green">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="photo_container"></div>
+        <div class="queries">
+          <div class="heading_2">
+            <h1 class="heading-sub">Where can i find ideas for small rooms?</h1>
+          </div>
+          <div class="para_box">
+            <div class="query__para">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+              dolorum provident praesentium, dolore ipsam earum aliquid illo
+              aperiam qui, autem voluptas aut necessitatibus voluptatibus?
+            </div>
+          </div>
+        </div>
+        <div class="buttons">
+          <span class="btn_prev"> < </span>
+          <button class="img_btn"></button>
+          <span class="btn_next">></span>
+        </div>
+      </div>
+    </div>
+    <!-- JAVASCRIPT -->
+    <script>
+      const prevBtn = document.querySelector(".btn_prev");
+      const nextBtn = document.querySelector(".btn_next");
+      const slider = document.querySelector(".photo_container");
+      const images = [
+        "./images/p1.jpg",
+        "./images/p2.jpg",
+        "./images/p3.png",
+        "./images/p4.jpg",
+        "./images/p5.jpg",
+        "./images/p6.jpeg",
+        "./images/p7.jpg",
+        "./images/p8.jpeg",
+        "./images/p9.jpg",
+        "./images/p10.jpg",
+        "./images/p11.jpg",
+        "./images/p12.jpg",
+        "./images/p13.jpg",
+        "./images/p14.jpg",
+        "./images/p15.jpg",
+      ];
+      let idx = 0;
+      nextBtn.onclick = function () {
+        idx = (idx + 1) % images.length;
+        slider.style.backgroundImage = `url("${images[idx]}")`;
+      };
+      prevBtn.onclick = function () {
+        if (idx >= 1) {
+          idx = (idx - 1) % images.length;
+        }
+        slider.style.backgroundImage = `url("${images[idx]}")`;
+      };
+    </script>
+  </body>
+</html>
